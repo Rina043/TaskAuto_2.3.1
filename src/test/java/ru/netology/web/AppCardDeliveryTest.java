@@ -79,4 +79,5 @@ public class AppCardDeliveryTest {
         $(byText("Заказ на выбранную дату невозможен")).waitUntil(Condition.visible, 15000);
     }
 
-    
+    }
+
