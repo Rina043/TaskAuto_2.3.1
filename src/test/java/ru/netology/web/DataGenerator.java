@@ -1,8 +1,5 @@
 package ru.netology.web;
-
 import com.github.javafaker.Faker;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -11,9 +8,11 @@ import java.util.List;
 import java.util.Locale;
 import java.util.Random;
 
-@Data
-@NoArgsConstructor
 public class DataGenerator {
+    private DataGenerator() {
+    }
+
+    private static final Faker faker = new Faker(new Locale("ru"));
     public static String getRandomCity() {
         List<String> list = Arrays.asList("Новосибирск", "Москва", "Санкт-Петербург", "Казань");
         Random rand = new Random();
@@ -41,4 +40,3 @@ public class DataGenerator {
         return faker.phoneNumber().phoneNumber();
     }
 }
-
